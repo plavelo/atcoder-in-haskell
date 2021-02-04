@@ -122,3 +122,11 @@ main = do
 # output
 [[1,2,3],[4,5,6]]
 ```
+
+## Output
+* If you want to output a String, you can use putStrLn or putStr.
+```haskell
+main = do
+  [a, b, c] <- map read . words <$> getLine :: IO [Int]
+  putStrLn . unwords $ map show [a, b, c]
+```
