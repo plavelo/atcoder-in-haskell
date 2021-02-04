@@ -1,5 +1,5 @@
-## I/O
-### Input
+# I/O
+## Input
 * Reads a string from stdin and outputs it.
 ```haskell
 main = do
