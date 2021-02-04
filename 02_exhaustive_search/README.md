@@ -9,15 +9,13 @@ main = do
   print . length $ [(i, j, k) | i <- [0 .. a], j <- [0 .. b], k <- [0 .. c], i * 500 + j * 100 + k * 50 == x]
 ```
 
-## [ARC004-A The longest distance]()
+## [ARC004-A The longest distance](https://atcoder.jp/contests/arc004/tasks/arc004_1)
 * Find the longest line segment formed by connecting two of the N points in the plane.
 ```haskell
 import Control.Monad
 
-toTuple [x, y] = (x, y)
-
 main = do
   n <- readLn
-  p <- replicateM n $ toTuple . map read . words <$> getLine
-  print $ maximum [sqrt . fromIntegral $ (fst j - fst i) ^ 2 + (snd j - snd i) ^ 2 | i <- p, j <- p]
+  p <- replicateM n $ map read . words <$> getLine
+  print $ maximum [sqrt . fromIntegral $ (head j - head i) ^ 2 + (last j - last i) ^ 2 | i <- p, j <- p]
 ```
